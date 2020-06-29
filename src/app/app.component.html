@@ -24,6 +24,12 @@
       <p appBasicHighlight>Style me using own basic directive</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me using own better directive
       </p>
+      <div *appUnless="onlyOdd">
+        <li class="list-group-item" [ngClass]="{odd: even % 2 !==0}"
+          [ngStyle]="{backgroundColor: even % 2 !==0 ? 'yellow' : 'transparent'}" *ngFor="let even of evenNumbers">
+          {{even}}
+        </li>
+      </div>
     </div>
   </div>
 </div>
